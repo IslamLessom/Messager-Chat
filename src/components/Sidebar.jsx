@@ -1,11 +1,16 @@
-import React from 'react'
+import React from "react";
+
+//components
+import Navbar from "./Navbar";
+import Search from "./Search";
 
 function Sidebar() {
   return (
-    <div>
-      
+    <div className="sidebar">
+      <Navbar />
+      <Search />
     </div>
-  )
+  );
 }
 
-export default Sidebar
+export default Sidebar;
