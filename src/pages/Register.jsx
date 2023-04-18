@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 //react-router-dom
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 //images
 import Add from "../img/addAvatar.png";
 //firebase
@@ -12,7 +12,7 @@ import { doc, setDoc } from "firebase/firestore";
 const Register = () => {
   const [err, setErr] = useState(false);
   const [loading, setLoading] = useState(false);
-  
+
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -46,6 +46,9 @@ const Register = () => {
               email,
               photoURL: downloadURL,
             });
+
+            await setDoc(doc(db, "userChats", res.user.uid), {});
+            navigate("/")
           });
         }
       );
@@ -72,7 +75,7 @@ const Register = () => {
           {loading && "Uploading and compressing the image please wait..."}
           {err && <span>Something went wrong</span>}
         </form>
-        <p>You do have an account? Login</p>
+        <p>You do have an account? <NavLink to="/login">Login</NavLink> </p>
       </div>
     </div>
   );

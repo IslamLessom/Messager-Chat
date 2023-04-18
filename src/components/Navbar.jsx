@@ -1,4 +1,8 @@
 import React from "react";
+//firebase
+import { signOut } from "firebase/auth";
+import { auth } from "../firebase";
+//components
 
 function Navbar() {
   return (
@@ -7,7 +11,7 @@ function Navbar() {
       <div className="user">
         <img src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745" />
         <span>Islam</span>
-        <button>logout</button>
+        <button onClick={() => signOut(auth)}>logout</button>
       </div>
     </div>
   );
