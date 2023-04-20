@@ -11,9 +11,11 @@ import { db } from "../firebase";
 
 function Messages() {
   const [messages, setMessages] = useState([]);
+  const [isPaused, setIsPaused] = useState(false);
   const { data } = useContext(ChatContext);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const unSub = onSnapshot(doc(db, "chats", data.chatId), (doc) => {
       doc.exists() && setMessages(doc.data().messages);
     });
@@ -23,7 +25,7 @@ function Messages() {
     };
   }, [data.chatId]);
   return (
-    <div className="messages">
+    <div className="messages" >
       {messages.map((m) => (
         <Message message={m} key={m.id} />
       ))}
