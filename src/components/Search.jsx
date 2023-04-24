@@ -86,7 +86,7 @@ function Search() {
       <div className="searchForm">
         <input
           type="text"
-          placeholder="search user"
+          placeholder="Найти друга..."
           onChange={(e) => setUsername(e.target.value)}
           onKeyDown={handleKey}
           value={username}

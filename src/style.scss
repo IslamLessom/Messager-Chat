@@ -99,6 +99,8 @@
     height: 80%;
     display: flex;
     overflow: hidden;
+    grid-template-columns: 20% 80%;
+
     @include tablet {
       width: 90%;
     }
@@ -109,7 +111,7 @@
     }
 
     .sidebar {
-      flex: 1;
+      flex: 0.4;
       background-color: #3e3c61;
       position: relative;
 
@@ -119,6 +121,7 @@
 
       .navbar {
         display: flex;
+        flex-direction: column;
         align-items: center;
         background-color: #2f2d52;
         height: 50px;
@@ -158,8 +161,54 @@
           }
         }
       }
+
+      .navigate {
+        color: white;
+        margin: 30px 0 30px -22px;
+        li {
+          list-style-type: none;
+          padding-top: 10px;
+        }
+      }
+
       .search {
         border-bottom: 1px solid gray;
+        position: absolute;
+        bottom: 44.1%;
+        background-color: #5D5B8D;
+        width: 100%;
+
+        .userChat {
+          padding: 10px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          color: white;
+          cursor: pointer;
+          width: 180px;
+
+          &:hover {
+            background-color: #2f2d52;
+          }
+
+          img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          .userChatInfo {
+            span {
+              font-size: 18px;
+              font-weight: 500;
+            }
+            p {
+              font-size: 14px;
+              color: lightgray;
+            }
+          }
+        }
 
         .searchForm {
           padding: 10px;
@@ -178,10 +227,15 @@
       }
 
       .chats {
-        height: calc(100% - 160px);
-        overflow: auto;
+        height: 35%;
+        overflow: scroll;
         -ms-overflow-style: none;
         scrollbar-width: none;
+        position: absolute;
+        bottom: 0px;
+        background-color: #5D5B8D;
+        width: 100%;
+        padding: 20px 0 20px 0;
 
         &::-webkit-scrollbar {
           width: 0;
@@ -194,6 +248,7 @@
           gap: 10px;
           color: white;
           cursor: pointer;
+          width: 180px;
 
           &:hover {
             background-color: #2f2d52;
@@ -221,6 +276,7 @@
     }
     .chat {
       flex: 2;
+      
 
       .chatInfo {
         height: 50px;
