@@ -30,7 +30,7 @@ function Login() {
   return (
     <div className="formContainer">
       <div className="formWrapper">
-        <span className="logo">Chat Message</span>
+        <span className="logo">Gip-Chat</span>
         <span className="title">Login</span>
         <form onSubmit={handleSubmit}>
           <input type="email" placeholder="email" />

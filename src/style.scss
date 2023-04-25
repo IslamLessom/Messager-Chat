@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap');
+
 @mixin mobile {
   @media screen and (max-width: 480px) {
     @content;
@@ -95,8 +97,8 @@
 
   .container {
     border-radius: 10px;
-    width: 65%;
-    height: 80%;
+    width: 85%;
+    height: 87%;
     display: flex;
     overflow: hidden;
     grid-template-columns: 20% 80%;
@@ -164,10 +166,14 @@
 
       .navigate {
         color: white;
-        margin: 30px 0 30px -22px;
+        margin: 8px 0 30px -22px;
+        font-size: 21px;
+        
         li {
           list-style-type: none;
-          padding-top: 10px;
+          font-family: 'Montserrat', sans-serif;
+          padding-top: 15px;
+          
         }
       }
 
