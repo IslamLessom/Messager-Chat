@@ -8,9 +8,12 @@ import "./style.scss";
 //context
 import { AuthContext } from "./context/AuthContext";
 //components
-import Home from "./pages/Home";
+import Home from "./pages/Messages";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import News from "./pages/News";
+import Profile from "./pages/Profile";
+import Friends from "./pages/Friends";
 
 function App() {
   const { currentUser } = useContext(AuthContext);
@@ -31,12 +34,15 @@ function App() {
             index
             element={
               <ProtectedRoute>
-                <Home />
+                <Profile />
               </ProtectedRoute>
             }
           />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
+          <Route path="news" element={<News />} />
+          <Route path="message" element={<Home />} />
+          <Route path="friends" element={<Friends />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -169,11 +169,9 @@
         margin: 8px 0 30px -22px;
         font-size: 21px;
         
-        li {
-          list-style-type: none;
-          font-family: 'Montserrat', sans-serif;
-          padding-top: 15px;
-          
+        ul {
+          display: flex;
+          flex-direction: column;
         }
       }
 
