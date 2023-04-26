@@ -7,6 +7,20 @@ import Add from "../img/addAvatar.png";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 
+//styled
+import {
+  Button,
+  Description,
+  Form,
+  FormContainer,
+  FormWrapper,
+  Img,
+  Input,
+  Label,
+  Logo,
+  Title,
+} from "./Login.elements";
+
 function Login() {
   const [err, setErr] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -21,30 +35,30 @@ function Login() {
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/")
+      navigate("/");
     } catch (err) {
       setErr(true);
     }
   };
 
   return (
-    <div className="formContainer">
-      <div className="formWrapper">
-        <span className="logo">Gip-Chat</span>
-        <span className="title">Login</span>
-        <form onSubmit={handleSubmit}>
-          <input type="email" placeholder="email" />
-          <input type="password" placeholder="password" />
-          <button>Sign in</button>
-        </form>
+    <FormContainer>
+      <FormWrapper>
+        <Logo>Gip-Chat</Logo>
+        <Title>Register</Title>
+        <Form onSubmit={handleSubmit}>
+          <Input required type="email" placeholder="email" />
+          <Input required type="password" placeholder="password" />
+          <Button>Sign up</Button>
+        </Form>
         {loading && "Uploading and compressing the image please wait..."}
-          {err && <span>Something went wrong</span>}
+        {err && <span>Something went wrong</span>}
         <p>
           You don`t have an account ?{" "}
           <NavLink to="/register">Registration</NavLink>
         </p>
-      </div>
-    </div>
+      </FormWrapper>
+    </FormContainer>
   );
 }
 

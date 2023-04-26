@@ -5,15 +5,22 @@ import Navbar from "./Navbar";
 import Search from "./Search";
 import Chats from "./Chats";
 import Navigate from "./Navigate";
+import { SidebarS } from "./Sidebar.elements";
 
 function Sidebar() {
   return (
-    <div className="sidebar">
+    <SidebarS>
       <Navbar />
       <Navigate />
-      <Search />
-      <Chats />
-    </div>
+      {window.location.pathname == "/message" ? (
+        <>
+          <Search />
+          <Chats />
+        </>
+      ) : (
+        <></>
+      )}
+    </SidebarS>
   );
 }
 

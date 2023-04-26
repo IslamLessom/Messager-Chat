@@ -4,19 +4,21 @@ import { AuthContext } from './../context/AuthContext';
 //firebase
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
+//style
+import { Img, Logo, NavbarS, SpanText, User } from "./Navbar.elements";
 //components
 
 function Navbar() {
   const {currentUser} = useContext(AuthContext)
   return (
-    <div className="navbar">
-      <span className="logo">Gip-Chat</span>
-      <div className="user">
-        <img src={currentUser.photoURL} />
-        <span>{currentUser.displayName}</span>
+    <NavbarS>
+      <Logo>Gip-Chat</Logo>
+      <User>
+        <Img src={currentUser.photoURL} />
+        <SpanText>{currentUser.displayName}</SpanText>
         <button onClick={() => signOut(auth)}>logout</button>
-      </div>
-    </div>
+      </User>
+    </NavbarS>
   );
 }
 

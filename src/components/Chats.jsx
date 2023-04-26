@@ -5,6 +5,9 @@ import { db } from "../firebase";
 //context
 import { AuthContext } from "../context/AuthContext";
 import { ChatContext } from "../context/UserContext";
+//styled
+import { ChatsS } from "./Chats.elements";
+import { UserChat, UserChatInfo } from "./Search.elements";
 
 function Chats() {
   const [chats, setChats] = useState([]);
@@ -31,21 +34,22 @@ function Chats() {
   };
 
   return (
-    <div className="chats">
-      {Object.entries(chats)?.sort((a, b) => b[1].date - a[1].date).map((chat) => (
-        <div
-          className="userChat"
-          key={chat[0]}
-          onClick={() => handleSelect(chat[1].userInfo)}
-        >
-          <img src={chat[1].userInfo.photoURL} />
-          <div className="userChatInfo">
-            <span>{chat[1].userInfo.displayName}</span>
-            <p>{chat[1].lastMessage?.text}</p>
-          </div>
-        </div>
-      ))}
-    </div>
+    <ChatsS>
+      {Object.entries(chats)
+        ?.sort((a, b) => b[1].date - a[1].date)
+        .map((chat) => (
+          <UserChat
+            key={chat[0]}
+            onClick={() => handleSelect(chat[1].userInfo)}
+          >
+            <img src={chat[1].userInfo.photoURL} />
+            <UserChatInfo>
+              <span>{chat[1].userInfo.displayName}</span>
+              <p>{chat[1].lastMessage?.text}</p>
+            </UserChatInfo>
+          </UserChat>
+        ))}
+    </ChatsS>
   );
 }
 

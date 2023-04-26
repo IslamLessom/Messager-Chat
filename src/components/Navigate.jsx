@@ -1,10 +1,12 @@
 import React from "react";
 //route
 import { NavLink } from "react-router-dom";
+//styled
+import { NavigateS } from "./Navigate.elements";
 
 function Navigate() {
   return (
-    <div className="navigate">
+    <NavigateS>
       <ul>
         <NavLink
           style={{
@@ -51,7 +53,7 @@ function Navigate() {
           Друзья
         </NavLink>
       </ul>
-    </div>
+    </NavigateS>
   );
 }
 

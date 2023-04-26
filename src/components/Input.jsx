@@ -17,6 +17,7 @@ import { db, storage } from "../firebase";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 //components
 import { v4 as uuid } from "uuid";
+import { InputS, Send } from "./Input.elements";
 
 function Input() {
   const [text, setText] = useState("");
@@ -30,25 +31,27 @@ function Input() {
     if (text != "" || img != null) {
       if (img) {
         const storageRef = ref(storage, uuid());
-  
+
         const uploadTask = uploadBytesResumable(storageRef, img);
-  
+
         uploadTask.on(
           (error) => {
             //TODO:Handle Error
           },
           () => {
-            getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
-              await updateDoc(doc(db, "chats", data.chatId), {
-                messages: arrayUnion({
-                  id: uuid(),
-                  text,
-                  senderId: currentUser.uid,
-                  date: Timestamp.now(),
-                  img: downloadURL,
-                }),
-              });
-            });
+            getDownloadURL(uploadTask.snapshot.ref).then(
+              async (downloadURL) => {
+                await updateDoc(doc(db, "chats", data.chatId), {
+                  messages: arrayUnion({
+                    id: uuid(),
+                    text,
+                    senderId: currentUser.uid,
+                    date: Timestamp.now(),
+                    img: downloadURL,
+                  }),
+                });
+              }
+            );
           }
         );
       } else {
@@ -61,21 +64,21 @@ function Input() {
           }),
         });
       }
-  
+
       await updateDoc(doc(db, "userChats", currentUser.uid), {
         [data.chatId + ".lastMessage"]: {
           text,
         },
         [data.chatId + ".date"]: serverTimestamp(),
       });
-  
+
       await updateDoc(doc(db, "userChats", data.user.uid), {
         [data.chatId + ".lastMessage"]: {
           text,
         },
         [data.chatId + ".date"]: serverTimestamp(),
       });
-  
+
       setText("");
       setImg(null);
     } else {
@@ -84,14 +87,14 @@ function Input() {
   };
 
   return (
-    <div className="input">
+    <InputS>
       <input
         type="text"
         placeholder={emptytext}
         onChange={(e) => setText(e.target.value)}
         value={text}
       />
-      <div className="send">
+      <Send>
         <img src={Attach} />
         <input
           type="file"
@@ -103,8 +106,8 @@ function Input() {
           <img src={Img} alt="" />
         </label>
         <button onClick={handleSend}>Send</button>
-      </div>
-    </div>
+      </Send>
+    </InputS>
   );
 }
 

@@ -8,6 +8,19 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, db, storage } from "../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
+//styled
+import {
+  Button,
+  Description,
+  Form,
+  FormContainer,
+  FormWrapper,
+  Img,
+  Input,
+  Label,
+  Logo,
+  Title,
+} from "./Register.elements";
 
 const Register = () => {
   const [err, setErr] = useState(false);
@@ -48,7 +61,7 @@ const Register = () => {
             });
 
             await setDoc(doc(db, "userChats", res.user.uid), {});
-            navigate("/")
+            navigate("/");
           });
         }
       );
@@ -58,26 +71,28 @@ const Register = () => {
   };
 
   return (
-    <div className="formContainer">
-      <div className="formWrapper">
-        <span className="logo">Gip-Chat</span>
-        <span className="title">Register</span>
-        <form onSubmit={handleSubmit}>
-          <input required type="text" placeholder="display name" />
-          <input required type="email" placeholder="email" />
-          <input required type="password" placeholder="password" />
-          <input required style={{ display: "none" }} type="file" id="file" />
-          <label htmlFor="file">
-            <img src={Add} alt="" />
-            <span>Add an avatar</span>
-          </label>
-          <button disabled={loading}>Sign up</button>
+    <FormContainer>
+      <FormWrapper>
+        <Logo>Gip-Chat</Logo>
+        <Title>Register</Title>
+        <Form onSubmit={handleSubmit}>
+          <Input required type="text" placeholder="display name" />
+          <Input required type="email" placeholder="email" />
+          <Input required type="password" placeholder="password" />
+          <Input required style={{ display: "none" }} type="file" id="file" />
+          <Label htmlFor="file">
+            <Img src={Add} alt="" />
+            <Description>Add an avatar</Description>
+          </Label>
+          <Button disabled={loading}>Sign up</Button>
           {loading && "Uploading and compressing the image please wait..."}
           {err && <span>Something went wrong</span>}
-        </form>
-        <p>You do have an account? <NavLink to="/login">Login</NavLink> </p>
-      </div>
-    </div>
+        </Form>
+        <p>
+          You do have an account? <NavLink to="/login">Login</NavLink>{" "}
+        </p>
+      </FormWrapper>
+    </FormContainer>
   );
 };
 

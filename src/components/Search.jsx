@@ -14,6 +14,8 @@ import {
 import { db } from "../firebase";
 //context
 import { AuthContext } from "./../context/AuthContext";
+//styled
+import { SearchForm, SearchS, UserChat, UserChatInfo } from "./Search.elements";
 
 function Search() {
   const [username, setUsername] = useState("");
@@ -82,8 +84,8 @@ function Search() {
   };
 
   return (
-    <div className="search">
-      <div className="searchForm">
+    <SearchS>
+      <SearchForm>
         <input
           type="text"
           placeholder="Найти друга..."
@@ -91,19 +93,19 @@ function Search() {
           onKeyDown={handleKey}
           value={username}
         />
-      </div>
+      </SearchForm>
       {err && (
         <span style={{ color: "white", padding: "10px" }}>User not found!</span>
       )}
       {user && (
-        <div className="userChat" onClick={handleSelect}>
+        <UserChat onClick={handleSelect}>
           <img src={user.photoURL} />
-          <div className="userChatInfo">
+          <UserChatInfo>
             <span>{user.displayName}</span>
-          </div>
-        </div>
+          </UserChatInfo>
+        </UserChat>
       )}
-    </div>
+    </SearchS>
   );
 }
 

@@ -8,6 +8,8 @@ import { ChatContext } from "../context/UserContext";
 //firebase
 import { doc, onSnapshot } from "firebase/firestore";
 import { db } from "../firebase";
+//styled
+import { MessagesS } from "./Messages.styled";
 
 function Messages() {
   const [messages, setMessages] = useState([]);
@@ -25,11 +27,11 @@ function Messages() {
     };
   }, [data.chatId]);
   return (
-    <div className="messages" >
+    <MessagesS >
       {messages.map((m) => (
         <Message message={m} key={m.id} />
       ))}
-    </div>
+    </MessagesS>
   );
 }
 

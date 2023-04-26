@@ -3,12 +3,10 @@ import { useContext } from "react";
 
 //router
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-//style
-import "./style.scss";
 //context
 import { AuthContext } from "./context/AuthContext";
 //components
-import Home from "./pages/Messages";
+import MessagesChat from "./pages/MessagesChat";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import News from "./pages/News";
@@ -41,7 +39,7 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
           <Route path="news" element={<News />} />
-          <Route path="message" element={<Home />} />
+          <Route path="message" element={<MessagesChat />} />
           <Route path="friends" element={<Friends />} />
         </Route>
       </Routes>
