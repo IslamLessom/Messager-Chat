@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 //context
-import { AuthContext } from "./../context/AuthContext";
+import { AuthContext } from "../context/AuthContext";
 import { ChatContext } from "../context/UserContext";
 //styled
 import { MessageS, MessageContent, MessageInfo, MessageOwner, MessageContentOwner } from "./Message.styled";

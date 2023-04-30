@@ -13,7 +13,7 @@ import {
 } from "firebase/firestore";
 import { db } from "../firebase";
 //context
-import { AuthContext } from "./../context/AuthContext";
+import { AuthContext } from "../context/AuthContext";
 //styled
 import { SearchForm, SearchS, UserChat, UserChatInfo } from "./Search.elements";
 

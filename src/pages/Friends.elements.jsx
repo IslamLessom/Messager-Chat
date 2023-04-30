@@ -16,6 +16,7 @@ export const Container = styled.div`
   overflow: hidden;
   grid-template-columns: 20% 80%;
 `;
+
 export const FriendsContent = styled.div`
   flex: 2;
 `;

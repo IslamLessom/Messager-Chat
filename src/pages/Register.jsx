@@ -32,14 +32,16 @@ const Register = () => {
     setLoading(true);
     e.preventDefault();
     const displayName = e.target[0].value;
-    const email = e.target[1].value;
-    const password = e.target[2].value;
-    const file = e.target[3].files[0];
+    const displayFirstName = e.target[1].value;
+    const city = e.target[2].value;
+    const email = e.target[3].value;
+    const password = e.target[4].value;
+    const file = e.target[5].files[0];
 
     try {
       const res = await createUserWithEmailAndPassword(auth, email, password);
 
-      const storageRef = ref(storage, displayName);
+      const storageRef = ref(storage, displayName, displayFirstName, city);
 
       const uploadTask = uploadBytesResumable(storageRef, file);
 
@@ -51,11 +53,15 @@ const Register = () => {
           getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
             await updateProfile(res.user, {
               displayName,
+              displayFirstName,
+              city,
               photoURL: downloadURL,
             });
             await setDoc(doc(db, "users", res.user.uid), {
               uid: res.user.uid,
               displayName,
+              displayFirstName,
+              city,
               email,
               photoURL: downloadURL,
             });
@@ -76,7 +82,9 @@ const Register = () => {
         <Logo>Gip-Chat</Logo>
         <Title>Register</Title>
         <Form onSubmit={handleSubmit}>
-          <Input required type="text" placeholder="display name" />
+          <Input required type="text" placeholder="Введите ваше имя" />
+          <Input required type="text" placeholder="Введите вашу фамилию" />
+          <Input required type="text" placeholder="Введите ваш город" />
           <Input required type="email" placeholder="email" />
           <Input required type="password" placeholder="password" />
           <Input required style={{ display: "none" }} type="file" id="file" />

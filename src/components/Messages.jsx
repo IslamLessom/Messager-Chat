@@ -17,7 +17,6 @@ function Messages() {
   const { data } = useContext(ChatContext);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
     const unSub = onSnapshot(doc(db, "chats", data.chatId), (doc) => {
       doc.exists() && setMessages(doc.data().messages);
     });

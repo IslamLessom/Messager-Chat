@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useReducer, useState } from "react";
+import React, { createContext, useContext, useEffect, useReducer, useState } from "react";
 import { AuthContext } from './AuthContext';
 //firebase
 import { auth } from "../firebase";
