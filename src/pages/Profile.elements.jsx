@@ -69,7 +69,7 @@ export const ContainerRecords = styled.div`
   background-color: #5d5b8d;
   color: white;
   margin-top: 30px;
-  padding: 30px;
+  padding: 20px;
   border-radius: 8px;
   &::-webkit-scrollbar {
     width: 0;

@@ -27,6 +27,8 @@ function Input() {
   const { currentUser } = useContext(AuthContext);
   const { data } = useContext(ChatContext);
 
+
+
   const handleSend = async () => {
     if (text != "" || img != null) {
       if (img) {
@@ -86,6 +88,10 @@ function Input() {
     }
   };
 
+  const handleKey = (e) => {
+    e.code === "Enter" && handleSend();
+  };
+
   return (
     <InputS>
       <input
@@ -93,6 +99,7 @@ function Input() {
         placeholder={emptytext}
         onChange={(e) => setText(e.target.value)}
         value={text}
+        onKeyDown={handleKey}
       />
       <Send>
         <img src={Attach} />
@@ -101,6 +108,7 @@ function Input() {
           style={{ display: "none" }}
           id="file"
           onChange={(e) => setImg(e.target.files[0])}
+          onKeyDown={handleKey}
         />
         <label htmlFor="file">
           <img src={Img} alt="" />

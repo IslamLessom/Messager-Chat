@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const SidebarS = styled.div`
-  flex: 0.4;
+  flex: 0.5;
   background-color: #3e3c61;
   position: relative;
 
