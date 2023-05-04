@@ -2,13 +2,11 @@ import React, { useContext, useEffect, useState } from "react";
 //context
 import { AuthContext } from "../context/AuthContext";
 //firebase
-import {
-  collection,
-  getDocs,
-} from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
 //components
 import Sidebar from "../components/Sidebar";
+import NewsCreateModal from "../components/NewsCreateModal";
 //styled
 import {
   Add,
@@ -34,6 +32,8 @@ import {
 function Profile() {
   const [profile, setProfile] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [modalAdd, setModalAdd] = useState(false);
+  const [modalPublication, setModalPublication] = useState(false);
 
   const profileCollectionRef = collection(db, "users");
   const { currentUser } = useContext(AuthContext);
@@ -82,8 +82,20 @@ function Profile() {
                 <ProfileCity>Город - {profile[myProfile].city}</ProfileCity>
                 <ProfileFriends>Друзей - 10</ProfileFriends>
                 <ContainerAdd>
-                  <Add>Добавить запись</Add>
-                  <AddPublication>Добавить публицию</AddPublication>
+                  <Add onClick={() => setModalAdd(true)}>Добавить запись</Add>
+                  {modalPublication === true && (
+                    <NewsCreateModal
+                      setModalPublication={setModalPublication}
+                    />
+                  )}
+                  <AddPublication onClick={() => setModalPublication(true)}>
+                    Добавить публицию
+                  </AddPublication>
+                  {modalPublication === true && (
+                    <NewsCreateModal
+                      setModalPublication={setModalPublication}
+                    />
+                  )}
                 </ContainerAdd>
               </ProfileInfo>
             </>
