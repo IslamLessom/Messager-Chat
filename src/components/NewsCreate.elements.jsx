@@ -93,4 +93,6 @@ export const Exit = styled.button`
   background-color: #a7bcff;
   font-size: 17px;
   border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
 `

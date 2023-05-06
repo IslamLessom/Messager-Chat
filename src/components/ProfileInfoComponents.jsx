@@ -54,6 +54,8 @@ function ProfileInfoComponents() {
     };
 
     currentUser.uid && getChats();
+
+    
   }, [currentUser.uid]);
 
   let count = 0;
