@@ -3,9 +3,15 @@ import { useNavigate } from "react-router-dom";
 //images
 import Add from "../img/addAvatar.png";
 //firebase
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, doc, setDoc } from "firebase/firestore";
 import { auth, db, storage } from "../firebase";
-import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
+import {
+  ref,
+  uploadBytes,
+  listAll,
+  getDownloadURL,
+  uploadBytesResumable,
+} from "firebase/storage";
 //components
 import { v4 } from "uuid";
 //styled
@@ -23,91 +29,75 @@ import {
   Title,
   TextP,
   Exit,
+  Form,
 } from "./NewsCreate.elements";
 
 function NewsCreateModal({ setModalPublication }) {
-  const [title, setTitle] = useState("");
-  const [author, setAuthor] = useState("");
-  const [postText, setPostText] = useState("");
-
-  const [imageUpload, setImageUpload] = useState(null);
-  const [imageList, setImageList] = useState([]);
+  const [err, setErr] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const imageListRef = ref(storage, "images/");
 
-  const postsCollectionRef = collection(db, "posts");
-
-  const uploadImage = () => {
-    if (imageUpload == null) return;
-    const imagesRef = ref(storage, `images/${imageUpload.name + v4()}`);
-    uploadBytes(imagesRef, imageUpload).then(() => {
-      alert("images upload");
-    });
-  };
-
   let navigate = useNavigate();
 
-  const createPost = async () => {
-    await addDoc(postsCollectionRef, {
-      title,
-      postText,
-      author,
-    });
-    navigate("/news");
+  const handleSubmit = async (e) => {
+    setLoading(true);
+    e.preventDefault();
+    const author = e.target[0].value;
+    const title = e.target[1].value;
+    const postText = e.target[2].value;
+    const file = e.target[3].files[0];
+
+    try {
+      const storageRef = ref(storage, title, author, postText);
+      const uploadTask = uploadBytesResumable(storageRef, file);
+      const postsCollectionRef = collection(db, "posts");
+      uploadTask.on(
+        (error) => {
+          setErr(true);
+        },
+        () => {
+          getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
+            await setDoc(doc(db, "posts"), {
+              author,
+              postText,
+              title,
+              photoURL: downloadURL,
+            });
+          });
+        }
+      );
+      navigate("/");
+    } catch (err) {
+      setErr(true);
+    }
   };
 
-  useEffect(() => {
-    listAll(imageListRef).then((response) => {
-      {
-        response.items.forEach((item) => {
-          getDownloadURL(item).then((url) => {
-            setImageList((prev) => [...prev, url]);
-          });
-        });
-      }
-    });
-  }, []);
   return (
     <NewsContainer>
       <Modal>
         <Name>Добавить публикацию:</Name>
-        <AuthorContainer>
-          <Images
-            onChange={(event) => {
-              setImageUpload(event.target.files[0]);
-            }}
-            style={{ display: "none" }}
-            type="file"
-            id="file"
-          />
-          <Label htmlFor="file">
-            <Imgs src={Add} alt="" />
-            <TextP>Добавьте изображение</TextP>
-          </Label>
-          <Exit onClick={uploadImage}>Добавить изображение</Exit>
-          <Author
-            placeholder="Введите автора"
-            onChange={(event) => {
-              setAuthor(event.target.value);
-            }}
-          />
-        </AuthorContainer>
-        <PostContainer>
-          <Title
-            placeholder="Введите название публикации"
-            onChange={(event) => {
-              setTitle(event.target.value);
-            }}
-          />
-          <Description
-            placeholder="Введите содержимое"
-            onChange={(event) => {
-              setPostText(event.target.value);
-            }}
-          />
-        </PostContainer>
-        <Exit onClick={createPost}>Опубликовать</Exit>
-        <Exit onClick={() => setModalPublication(false)}>Выход</Exit>
+        <Form onSubmit={handleSubmit}>
+          <AuthorContainer>
+            <Images
+              required
+              style={{ display: "none" }}
+              type="file"
+              id="file"
+            />
+            <Label htmlFor="file" style={{ marginBottom: "20px" }}>
+              <Imgs src={Add} alt="" />
+              <TextP>Добавьте изображение</TextP>
+            </Label>
+            <Author required placeholder="Введите автора" />
+          </AuthorContainer>
+          <PostContainer>
+            <Title required placeholder="Введите название публикации" />
+            <Description required placeholder="Введите содержимое" />
+          </PostContainer>
+          <Exit style={{ marginRight: "20px" }}>Опубликовать</Exit>
+          <Exit onClick={() => setModalPublication(false)}>Выход</Exit>
+        </Form>
       </Modal>
     </NewsContainer>
   );

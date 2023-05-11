@@ -96,3 +96,5 @@ export const Exit = styled.button`
   cursor: pointer;
   margin-top: 10px;
 `
+
+export const Form = styled.form``
