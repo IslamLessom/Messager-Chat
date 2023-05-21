@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
+//#171817b3
+//#242e42
+
 export const ProfileS = styled.div`
-  background-color: #a7bcff;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -9,9 +11,8 @@ export const ProfileS = styled.div`
 `;
 
 export const Container = styled.div`
-  border-radius: 10px;
-  width: 85%;
-  height: 87%;
+  width: 100%;
+  height: 100%;
   display: flex;
   overflow: hidden;
   grid-template-columns: 20% 80%;
@@ -19,64 +20,78 @@ export const Container = styled.div`
 export const ProfileContent = styled.div`
   flex: 2;
 
-  background-color: rgb(221, 221, 247);
+  background-color: white;
   padding: 30px;
 `;
 
 export const ProfileImages = styled.img`
-  width: 30%;
-  height: 180px;
-  border-radius: 15px;
+  width: 170px;
+  height: 170px;
+  border-radius: 100%;
+  border: 4px solid rgb(23 22 22 / 30%);
 `;
 
 export const ContainerProfileInfo = styled.div`
-  position: relative;
   display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  background-color: #5d5b8d;
+  background-color: #242e42;
   padding: 30px;
   border-radius: 8px;
 `;
 
-export const ProfileInfo = styled.div``;
+export const ProfileInfo = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 50px;
+  justify-content: center;
+`;
 export const NameContainer = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: space-around;
+`;
+
+export const OtherContainerUser = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
 `;
 export const ProfileName = styled.h1`
   color: white;
-  padding-bottom: 15px;
-  padding-left: 10px;
 `;
 export const ProfileFirstName = styled.h1`
   color: white;
-  padding-bottom: 15px;
+  display: flex;
 `;
 
 export const ProfileCity = styled.p`
   color: white;
-  padding-bottom: 10px;
 `;
 export const ProfileFriends = styled.p`
   color: white;
-  padding-bottom: 10px;
+  margin-left: 25px;
 `;
-export const ContainerAdd = styled.div``;
+export const ContainerAdd = styled.div`
+  display: flex;
+  margin-top: 5px;
+`;
 export const Add = styled.p`
-  position: absolute;
-  bottom: 25px;
   color: white;
-  font-size: 20px;
-
+  font-size: 16px;
+  padding: 7px;
+  background-color: rgb(253, 253, 253, 0.39);
+  border-radius: 7px;
   cursor: pointer;
 `;
 
 export const AddPublication = styled.p`
-  position: absolute;
-  bottom: 55px;
   color: white;
-  font-size: 20px;
-
+  font-size: 16px;
+  background-color: rgb(253, 253, 253, 0.39);
+  border-radius: 7px;
+  padding: 7px;
+  margin-left: 15px;
   cursor: pointer;
 `;
 
@@ -86,7 +101,7 @@ export const ContainerRecords = styled.div`
   overflow: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  background-color: #5d5b8d;
+  background-color: #242e42;
   color: white;
   margin-top: 30px;
   padding: 20px;

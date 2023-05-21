@@ -9,9 +9,8 @@ export const NewsS = styled.div`
 `;
 
 export const Container = styled.div`
-  border-radius: 10px;
-  width: 85%;
-  height: 87%;
+  width: 100%;
+  height: 100%;
   display: flex;
   overflow: hidden;
   grid-template-columns: 20% 80%;

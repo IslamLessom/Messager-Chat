@@ -4,7 +4,7 @@ export const NavbarS = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #2f2d52;
+  background-color: #242e42;
   height: 50px;
   padding: 10px;
   justify-content: space-between;

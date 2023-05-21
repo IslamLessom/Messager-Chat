@@ -6,6 +6,7 @@ import {
   ContainerAdd,
   ContainerProfileInfo,
   NameContainer,
+  OtherContainerUser,
   ProfileCity,
   ProfileFirstName,
   ProfileFriends,
@@ -54,8 +55,6 @@ function ProfileInfoComponents() {
     };
 
     currentUser.uid && getChats();
-
-    
   }, [currentUser.uid]);
 
   let count = 0;
@@ -83,24 +82,26 @@ function ProfileInfoComponents() {
       <ProfileInfo>
         <NameContainer>
           <ProfileFirstName>
-            {profile[myProfile].displayFirstName}
+            <p style={{paddingRight: '10px'}}>{profile[myProfile].displayFirstName}</p>
+            <p style={{paddingRight: '60px'}}>{profile[myProfile].displayName}</p>
           </ProfileFirstName>
-          <ProfileName>{profile[myProfile].displayName}</ProfileName>
+          <ContainerAdd>
+            <Add onClick={() => setModalAdd(true)}>Добавить запись</Add>
+            {modalPublication === true && (
+              <NewsCreateModal setModalPublication={setModalPublication} />
+            )}
+            <AddPublication onClick={() => setModalPublication(true)}>
+              Добавить публицию
+            </AddPublication>
+            {modalPublication === true && (
+              <NewsCreateModal setModalPublication={setModalPublication} />
+            )}
+          </ContainerAdd>
         </NameContainer>
-        <ProfileCity>Город - {profile[myProfile].city}</ProfileCity>
-        <ProfileFriends>Друзей - {count}</ProfileFriends>
-        <ContainerAdd>
-          <Add onClick={() => setModalAdd(true)}>Добавить запись</Add>
-          {modalPublication === true && (
-            <NewsCreateModal setModalPublication={setModalPublication} />
-          )}
-          <AddPublication onClick={() => setModalPublication(true)}>
-            Добавить публицию
-          </AddPublication>
-          {modalPublication === true && (
-            <NewsCreateModal setModalPublication={setModalPublication} />
-          )}
-        </ContainerAdd>
+        <OtherContainerUser>
+          <ProfileCity>Город - {profile[myProfile].city}</ProfileCity>
+          <ProfileFriends>Друзей - {count}</ProfileFriends>
+        </OtherContainerUser>
       </ProfileInfo>
     </ContainerProfileInfo>
   );
