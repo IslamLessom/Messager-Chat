@@ -20,7 +20,7 @@ export const FriendsContent = styled.div`
   flex: 2;
   display: grid;
   grid-template-columns: 220px 220px 220px;
-  background-color: rgb(221, 221, 247);
+  background-color: white;
   justify-content: center;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -36,7 +36,7 @@ export const FriendsContent = styled.div`
 export const FriendsBlock = styled.div`
   position: relative;
   padding: 15px;
-  background-color: #5d5b8d;
+  background-color: #242e42;
   border-radius: 10px;
   text-align: center;
   height: 250px;

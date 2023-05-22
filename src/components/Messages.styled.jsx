@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const MessagesS = styled.div`
-  background-color: #ddddf7;
+  background-color: white;
   padding: 10px;
   height: calc(100% - 160px);
   overflow: scroll;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const NewsS = styled.div`
-  background-color: #a7bcff;
+  background-color: #242e42;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -17,7 +17,7 @@ export const Container = styled.div`
 `;
 export const NewsContent = styled.div`
   flex: 2;
-  background-color: rgb(221, 221, 247);
+  background-color: white;
 
   overflow: scroll;
   -ms-overflow-style: none;
@@ -31,7 +31,7 @@ export const NewsContent = styled.div`
 
 export const NewsContainer = styled.div`
   display: flex;
-  background-color: #5d5b8d;
+  background-color: #242e42;
   border-radius: 10px;
   padding: 20px;
   margin: 30px 20px 30px 20px;

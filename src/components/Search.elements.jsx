@@ -4,7 +4,7 @@ export const SearchS = styled.div`
   border-bottom: 1px solid gray;
   position: absolute;
   bottom: 44.1%;
-  background-color: #5d5b8d;
+  background-color: #242e42;
   width: 100%;
 `;
 
@@ -33,7 +33,7 @@ export const UserChat = styled.div`
   width: 180px;
 
   &:hover {
-    background-color: #2f2d52;
+    background-color: #777676;
   }
 
   img {

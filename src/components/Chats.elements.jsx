@@ -7,7 +7,7 @@ export const ChatsS = styled.div`
   scrollbar-width: none;
   position: absolute;
   bottom: 0px;
-  background-color: #5d5b8d;
+  background-color: #242e42;
   width: 100%;
   padding: 20px 0 20px 0;
 

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const InputS = styled.div`
   height: 50px;
-  background-color: white;
+  background-color: #f1f2f6;
   padding: 10px;
   display: flex;
   align-items: center;
@@ -14,6 +14,7 @@ export const InputS = styled.div`
     outline: none;
     color: #2f2d52;
     font-size: 18px;
+    background: #f1f2f6;
 
     &::placeholder {
       color: lightgray;
@@ -37,5 +38,6 @@ export const Send = styled.div`
     color: white;
     background-color: #8da4f1;
     cursor: pointer;
+    border-radius: 3px;
   }
 `;
