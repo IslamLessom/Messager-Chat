@@ -6,12 +6,13 @@ export const ChatS = styled.div`
 
 export const ChatInfo = styled.div`
   height: 50px;
-  background-color: #242e42;
+  background-color: white;
+  box-shadow: 2px 2px 2px 3px#5f5f5f1d;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  color: lightgray;
+  color: black;
 `;
 
 export const ChatIcons = styled.div`

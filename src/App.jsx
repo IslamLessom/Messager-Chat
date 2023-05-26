@@ -12,6 +12,7 @@ import Register from "./pages/Register";
 import News from "./pages/News";
 import Profile from "./pages/Profile";
 import Friends from "./pages/Friends";
+import { GlobalStyles } from "./GlobalStyles";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
 
   return (
     <BrowserRouter>
+    <GlobalStyles/>
       <Routes>
         <Route path="/">
           <Route

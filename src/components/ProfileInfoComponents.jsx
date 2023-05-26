@@ -82,27 +82,29 @@ function ProfileInfoComponents() {
       <ProfileInfo>
         <NameContainer>
           <ProfileFirstName>
-            <p style={{paddingRight: '10px'}}>{profile[myProfile].displayFirstName}</p>
-            <p style={{paddingRight: '60px'}}>{profile[myProfile].displayName}</p>
+            <p style={{ paddingRight: "10px" }}>
+              {profile[myProfile].displayFirstName}
+            </p>
+            <p>{profile[myProfile].displayName}</p>
           </ProfileFirstName>
-          <ContainerAdd>
-            <Add onClick={() => setModalAdd(true)}>Добавить запись</Add>
-            {modalPublication === true && (
-              <NewsCreateModal setModalPublication={setModalPublication} />
-            )}
-            <AddPublication onClick={() => setModalPublication(true)}>
-              Добавить публицию
-            </AddPublication>
-            {modalPublication === true && (
-              <NewsCreateModal setModalPublication={setModalPublication} />
-            )}
-          </ContainerAdd>
         </NameContainer>
         <OtherContainerUser>
-          <ProfileCity>Город - {profile[myProfile].city}</ProfileCity>
+          <ProfileCity>{profile[myProfile].city}</ProfileCity>
           <ProfileFriends>Друзей - {count}</ProfileFriends>
         </OtherContainerUser>
       </ProfileInfo>
+      <ContainerAdd>
+        <Add onClick={() => setModalAdd(true)}>Добавить запись</Add>
+        {modalPublication === true && (
+          <NewsCreateModal setModalPublication={setModalPublication} />
+        )}
+        <AddPublication onClick={() => setModalPublication(true)}>
+          Добавить публицию
+        </AddPublication>
+        {modalPublication === true && (
+          <NewsCreateModal setModalPublication={setModalPublication} />
+        )}
+      </ContainerAdd>
     </ContainerProfileInfo>
   );
 }

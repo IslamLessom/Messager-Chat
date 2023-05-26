@@ -2,17 +2,18 @@ import styled from "styled-components";
 
 export const NavbarS = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
-  background-color: #242e42;
+  background-color: white;
+  box-shadow: 0 2.8px 0 0 #72727213;
   height: 50px;
   padding: 10px;
-  justify-content: space-between;
-  color: #ddddf7;
+  justify-content: center;
+  color: black;
 `;
 
 export const Logo = styled.span`
   font-weight: bold;
+  font-size: 22px;
   @media screen and (max-width: 768px) {
     display: none;
   }
@@ -23,21 +24,12 @@ export const User = styled.div`
   gap: 10px;
 `;
 
-export const Img = styled.img`
-  background-color: #ddddf7;
-  height: 24px;
-  width: 24px;
-  border-radius: 50%;
-  object-fit: cover;
-`;
-
-export const SpanText = styled.span``;
-
 export const Button = styled.button`
   background-color: #5d5b8d;
   color: #ddddf7;
   font-size: 10px;
   border: none;
+  margin-left: 10px;
   cursor: pointer;
 
   @media screen and (max-width: 768px) {

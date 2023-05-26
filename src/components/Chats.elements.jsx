@@ -7,7 +7,7 @@ export const ChatsS = styled.div`
   scrollbar-width: none;
   position: absolute;
   bottom: 0px;
-  background-color: #242e42;
+  background-color: #ebedf0;
   width: 100%;
   padding: 20px 0 20px 0;
 
@@ -27,7 +27,7 @@ export const UserChat = styled.div`
   width: 180px;
 
   &:hover {
-    background-color: #2f2d52;
+    background-color: #ebedf0;
   }
 
   img {
