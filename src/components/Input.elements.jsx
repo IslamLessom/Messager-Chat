@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const InputS = styled.div`
   height: 50px;
-  background-color: #f1f2f6;
+  background-color: white;
   padding: 10px;
   display: flex;
   align-items: center;
@@ -14,7 +14,7 @@ export const InputS = styled.div`
     outline: none;
     color: #2f2d52;
     font-size: 18px;
-    background: #f1f2f6;
+    background: white;
 
     &::placeholder {
       color: lightgray;

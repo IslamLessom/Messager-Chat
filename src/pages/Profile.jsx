@@ -1,6 +1,7 @@
 import React from "react";
 //components
 import Sidebar from "../components/Sidebar";
+import Menu from "./../components/Menu";
 //styled
 import {
   Container,
@@ -10,7 +11,6 @@ import {
   ProfileS,
   Records,
   Title,
-  Menu
 } from "./Profile.elements";
 import ProfileInfoComponents from "../components/ProfileInfoComponents";
 
@@ -20,9 +20,7 @@ function Profile() {
       <Container>
         <Sidebar />
         <ProfileContent>
-          <Menu>
-            
-          </Menu>
+          <Menu />
           <ProfileInfoComponents />
           <ContainerRecords>
             <Title>Мои Записи:</Title>

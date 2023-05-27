@@ -28,12 +28,14 @@ export const MessageInfo = styled.div`
   flex-direction: column;
   color: gray;
   font-weight: 300;
+  
 
   img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
+    
   }
 `;
 

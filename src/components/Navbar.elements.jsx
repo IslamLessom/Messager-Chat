@@ -12,6 +12,8 @@ export const NavbarS = styled.div`
 `;
 
 export const Logo = styled.span`
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap");
+  font-family: "Montserrat", sans-serif;
   font-weight: bold;
   font-size: 22px;
   @media screen and (max-width: 768px) {

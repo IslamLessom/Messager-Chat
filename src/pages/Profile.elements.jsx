@@ -63,28 +63,26 @@ export const OtherContainerUser = styled.div`
 
   width: 100%;
 `;
-export const ProfileName = styled.h1`
-  color: black;
-  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
-  font-family: "Montserrat", sans-serif;
-`;
+
 export const ProfileFirstName = styled.h1`
   color: black;
   display: flex;
   p {
     font-size: 25px;
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap");
+    font-family: "Montserrat", sans-serif;
   }
 `;
 
 export const ProfileCity = styled.p`
   color: #818cb3;
-  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap");
   font-family: "Montserrat", sans-serif;
 `;
 export const ProfileFriends = styled.p`
   color: #818cb3;
   margin-left: 25px;
-  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap");
   font-family: "Montserrat", sans-serif;
 `;
 export const ContainerAdd = styled.div`
@@ -92,6 +90,8 @@ export const ContainerAdd = styled.div`
   margin-top: 5px;
 `;
 export const Add = styled.p`
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap");
+  font-family: "Montserrat", sans-serif;
   color: #53a8ef;
   box-shadow: 2px 2px 2px 2px#1817171d;
   font-size: 16px;
@@ -102,6 +102,8 @@ export const Add = styled.p`
 `;
 
 export const AddPublication = styled.p`
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap");
+  font-family: "Montserrat", sans-serif;
   color: #53a8ef;
   box-shadow: 2px 2px 2px 2px#1817171d;
   font-size: 16px;
@@ -114,7 +116,7 @@ export const AddPublication = styled.p`
 
 //records
 export const ContainerRecords = styled.div`
-  height: 50%;
+  height: 40%;
   overflow: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -132,29 +134,13 @@ export const ContainerRecords = styled.div`
 `;
 export const Title = styled.h1`
   margin-bottom: 13px;
-  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
-  font-family: "Montserrat", sans-serif;
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300&family=Montserrat:wght@200;300;400;500&display=swap');
 `;
 export const NameRecords = styled.h2`
   margin-top: 20px;
-  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
-  font-family: "Montserrat", sans-serif;
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300&family=Montserrat:wght@200;300;400;500&display=swap');
   margin-bottom: 7px;
 `;
 export const Records = styled.p`
-  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
-  font-family: "Montserrat", sans-serif;
-`;
-export const Menu = styled.div`
-  height: 50px;
-  margin-bottom: 20px;
-  background-color: white;
-  box-shadow: 0 2.8px 0 0 #72727213;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  color: black;
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
-  font-family: 'Montserrat', sans-serif;
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300&family=Montserrat:wght@200;300;400;500&display=swap');
 `;

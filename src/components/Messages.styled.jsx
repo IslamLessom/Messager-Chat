@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const MessagesS = styled.div`
-  background-color: white;
-  padding: 10px;
+  background-color: rgb(235, 237, 240);
+  margin: 10px;
   height: calc(100% - 160px);
   overflow: scroll;
   -ms-overflow-style: none;

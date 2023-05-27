@@ -12,7 +12,6 @@ import {
   ProfileFriends,
   ProfileImages,
   ProfileInfo,
-  ProfileName,
 } from "../pages/Profile.elements";
 //components
 import NewsCreateModal from "./NewsCreateModal";
@@ -32,7 +31,7 @@ function ProfileInfoComponents() {
   const [modalPublication, setModalPublication] = useState(false);
   //context
   const { currentUser } = useContext(AuthContext);
-
+  //search my profile in object
   const allMassive = profile.map((item) => item.uid);
   const profileUid = currentUser.uid;
   const myProfile = allMassive.indexOf(profileUid);

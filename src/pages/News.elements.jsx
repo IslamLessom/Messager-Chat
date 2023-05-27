@@ -17,7 +17,7 @@ export const Container = styled.div`
 `;
 export const NewsContent = styled.div`
   flex: 2;
-  background-color: white;
+  background-color: #ebedf0;
 
   overflow: scroll;
   -ms-overflow-style: none;

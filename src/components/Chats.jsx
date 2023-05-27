@@ -41,6 +41,11 @@ function Chats() {
           <UserChat
             key={chat[0]}
             onClick={() => handleSelect(chat[1].userInfo)}
+            style={{
+              backgroundColor: "rgb(56 88 207)",
+              margin: "5px",
+              borderRadius: "6px",
+            }}
           >
             <img src={chat[1].userInfo.photoURL} />
             <UserChatInfo>

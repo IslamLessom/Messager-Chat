@@ -98,7 +98,14 @@ function Search() {
         <span style={{ color: "white", padding: "10px" }}>User not found!</span>
       )}
       {user && (
-        <UserChat onClick={handleSelect}>
+        <UserChat
+          style={{
+            backgroundColor: "rgb(56 88 207)",
+            margin: "5px",
+            borderRadius: "6px",
+          }}
+          onClick={handleSelect}
+        >
           <img src={user.photoURL} />
           <UserChatInfo>
             <span>{user.displayName}</span>

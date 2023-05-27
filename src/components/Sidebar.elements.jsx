@@ -10,3 +10,9 @@ export const SidebarS = styled.div`
     height: 250px;
   }
 `;
+
+export const ContainerMenu = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;

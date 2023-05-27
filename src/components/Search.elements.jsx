@@ -1,22 +1,28 @@
 import styled from "styled-components";
 
 export const SearchS = styled.div`
-  border-bottom: 1px solid gray;
   position: absolute;
-  bottom: 44.1%;
-  background-color: #242e42;
-  width: 100%;
+  bottom: 40.1%;
+  width: 60%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const SearchForm = styled.div`
   padding: 10px;
-
+  background-color: rgb(77, 110, 231);
+  border-bottom: 1px solid gray;
+  border-radius: 10px;
+  color: black;
+  width: 80%;
   input {
     background-color: transparent;
     border: none;
     color: white;
     outline: none;
-
+    cursor: pointer;
     &::placeholder {
       color: lightgray;
     }
@@ -39,7 +45,7 @@ export const UserChat = styled.div`
   img {
     width: 50px;
     height: 50px;
-    border-radius: 50%;
+    border-radius: 10px;
     object-fit: cover;
   }
 `;

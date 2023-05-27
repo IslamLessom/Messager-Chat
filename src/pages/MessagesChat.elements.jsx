@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Home = styled.div`
-  background-color: #a7bcff;
   height: 100vh;
   display: flex;
   align-items: center;

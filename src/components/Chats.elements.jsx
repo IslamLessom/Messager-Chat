@@ -7,8 +7,6 @@ export const ChatsS = styled.div`
   scrollbar-width: none;
   position: absolute;
   bottom: 0px;
-  background-color: #ebedf0;
-  width: 100%;
   padding: 20px 0 20px 0;
 
   &::-webkit-scrollbar {
@@ -18,6 +16,7 @@ export const ChatsS = styled.div`
 `;
 
 export const UserChat = styled.div`
+  
   padding: 10px;
   display: flex;
   align-items: center;
@@ -25,6 +24,7 @@ export const UserChat = styled.div`
   color: white;
   cursor: pointer;
   width: 180px;
+  
 
   &:hover {
     background-color: #ebedf0;
