@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const FriendsS = styled.div`
-  background-color: #a7bcff;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -18,13 +17,18 @@ export const Container = styled.div`
 
 export const FriendsContent = styled.div`
   flex: 2;
-  display: grid;
-  grid-template-columns: 220px 220px 220px;
-  background-color: white;
+  background-color: #ebedf0;
   justify-content: center;
-  padding-top: 30px;
-  padding-bottom: 30px;
+`;
 
+export const ContainerFriends = styled.div`
+  background-color: white;
+  width: 60%;
+  border-radius: 10px;
+  height: 82%;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  //scroll start
   overflow: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -32,35 +36,30 @@ export const FriendsContent = styled.div`
     width: 0;
     height: 0;
   }
+  //scroll end
 `;
+
 export const FriendsBlock = styled.div`
-  position: relative;
-  padding: 15px;
-  background-color: #242e42;
-  border-radius: 10px;
-  text-align: center;
-  height: 250px;
-  width: 180px;
-  margin: 10px;
-  color: white;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-evenly;
+  margin: 12px;
 `;
-export const ImagesBlock = styled.div`
-  background: white;
-  padding: 8px;
-  border-radius: 8px;
-`;
+export const ImagesBlock = styled.div``;
 export const Images = styled.img`
-  width: 150px;
-  border-radius: 8px;
-  height: 120px;
+  width: 60px;
+  border-radius: 100%;
+  height: 60px;
 `;
-export const Name = styled.h3`
-  position: absolute;
-  bottom: 55px;
-  margin-left: 18px;
+export const NameContainer = styled.div`
+  display: flex;
+  margin-left: 10px;
+  margin-right: 10px;
+`
+export const Name = styled.h3``;
+export const FirstName = styled.h3`
+  margin-left: 10px;
+  margin-right: 10px;
 `;
-export const City = styled.p`
-  position: absolute;
-  bottom: 25px;
-  margin-left: 58px;
-`;
+export const City = styled.p``;

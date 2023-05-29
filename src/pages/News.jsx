@@ -13,6 +13,10 @@ import {
   NewsS,
   TextPost,
   TitleName,
+  ContainerNews,
+  DateInfoCreate,
+  AboutInfo,
+  ImagesPost
 } from "./News.elements";
 import Menu from "../components/Menu";
 
@@ -23,62 +27,26 @@ function News() {
         <Sidebar />
         <NewsContent>
           <Menu />
-          <NewsContainer>
-            <ImagesAndName>
-              <Images src="https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8=" />
-              <Name>Гасанов Ислам</Name>
-            </ImagesAndName>
-            <DescriptionBlock>
-              <TitleName>Это был отличный день</TitleName>
-              <TextPost>
-                Это был отличный день Это был отличный день Это был отличный
-                день Это был отличный день Это был отличный день Это был
-                отличный день
-              </TextPost>
-            </DescriptionBlock>
-          </NewsContainer>
-          <NewsContainer>
-            <ImagesAndName>
-              <Images src="https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8=" />
-              <Name>Гасанов Ислам</Name>
-            </ImagesAndName>
-            <DescriptionBlock>
-              <TitleName>Это был отличный день</TitleName>
-              <TextPost>
-                Это был отличный день Это был отличный день Это был отличный
-                день Это был отличный день Это был отличный день Это был
-                отличный день
-              </TextPost>
-            </DescriptionBlock>
-          </NewsContainer>
-          <NewsContainer>
-            <ImagesAndName>
-              <Images src="https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8=" />
-              <Name>Гасанов Ислам</Name>
-            </ImagesAndName>
-            <DescriptionBlock>
-              <TitleName>Это был отличный день</TitleName>
-              <TextPost>
-                Это был отличный день Это был отличный день Это был отличный
-                день Это был отличный день Это был отличный день Это был
-                отличный день
-              </TextPost>
-            </DescriptionBlock>
-          </NewsContainer>
-          <NewsContainer>
-            <ImagesAndName>
-              <Images src="https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8=" />
-              <Name>Гасанов Ислам</Name>
-            </ImagesAndName>
-            <DescriptionBlock>
-              <TitleName>Это был отличный день</TitleName>
-              <TextPost>
-                Это был отличный день Это был отличный день Это был отличный
-                день Это был отличный день Это был отличный день Это был
-                отличный день
-              </TextPost>
-            </DescriptionBlock>
-          </NewsContainer>
+          <ContainerNews>
+            <NewsContainer>
+              <ImagesAndName>
+                <Images src="https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8=" />
+                <AboutInfo>
+                  <Name>Гасанов Ислам</Name>
+                  <DateInfoCreate>12.12.2023</DateInfoCreate>
+                </AboutInfo>
+              </ImagesAndName>
+              <DescriptionBlock>
+                <TitleName>Это был отличный день</TitleName>
+                <ImagesPost src="https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8=" />
+                <TextPost>
+                  Это был отличный день Это был отличный день Это был отличный
+                  день Это был отличный день Это был отличный день Это был
+                  отличный день
+                </TextPost>
+              </DescriptionBlock>
+            </NewsContainer>
+          </ContainerNews>
         </NewsContent>
       </Container>
     </NewsS>
