@@ -28,6 +28,7 @@ export const ContainerFriends = styled.div`
   height: 82%;
   padding-top: 25px;
   padding-bottom: 25px;
+  text-align: center;
   //scroll start
   overflow: scroll;
   -ms-overflow-style: none;
@@ -41,10 +42,11 @@ export const ContainerFriends = styled.div`
 
 export const FriendsBlock = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   width: 100%;
   justify-content: space-evenly;
-  margin: 12px;
+  margin-top: 20px;
 `;
 export const ImagesBlock = styled.div``;
 export const Images = styled.img`
@@ -56,10 +58,33 @@ export const NameContainer = styled.div`
   display: flex;
   margin-left: 10px;
   margin-right: 10px;
-`
-export const Name = styled.h3``;
+`;
+export const Name = styled.p``;
 export const FirstName = styled.h3`
   margin-left: 10px;
   margin-right: 10px;
 `;
-export const City = styled.p``;
+export const City = styled.p`
+  margin-left: 30px;
+`;
+export const InputSearchPerson = styled.input`
+  padding: 10px;
+  background-color: rgb(51 95 255);
+  border-radius: 10px;
+  border: none;
+  color: white;
+  width: 80%;
+
+  ::placeholder {
+    color: white;
+    font-size: 16px;
+  }
+`;
+
+export const ContainerPerson = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  justify-content: space-evenly;
+  width: 100%;
+`;

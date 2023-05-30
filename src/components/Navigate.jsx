@@ -11,8 +11,9 @@ import {
 } from "./Navigate.elements";
 //firebase
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "../firebase";
+import { auth, db } from "../firebase";
 import { AuthContext } from "../context/AuthContext";
+import { signOut } from "firebase/auth";
 
 function Navigate() {
   const [profile, setProfile] = useState([]);
@@ -116,6 +117,7 @@ function Navigate() {
           </svg>
           <LinksText>Друзья</LinksText>
         </Links>
+        <button style={{marginTop: '10px'}} onClick={() => signOut(auth)}>logout</button>
       </ul>
     </NavigateS>
   );

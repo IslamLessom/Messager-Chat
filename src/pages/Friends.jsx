@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext, useState, useEffect } from "react";
 //components
 import Sidebar from "../components/Sidebar";
+import Menu from "../components/Menu";
 //styled
 import {
   City,
@@ -13,11 +14,41 @@ import {
   Name,
   ContainerFriends,
   FirstName,
-  NameContainer
+  NameContainer,
+  InputSearchPerson,
+  ContainerPerson,
 } from "./Friends.elements";
-import Menu from "../components/Menu";
+//firebase
+import { doc, onSnapshot } from "firebase/firestore";
+import { db } from "../firebase";
+//context
+import { ChatContext } from "../context/UserContext";
+import { AuthContext } from "../context/AuthContext";
 
 function Friends() {
+  const [chats, setChats] = useState([]);
+
+  const { currentUser } = useContext(AuthContext);
+  const { dispatch } = useContext(ChatContext);
+
+  useEffect(() => {
+    const getChats = () => {
+      const unsub = onSnapshot(doc(db, "userChats", currentUser.uid), (doc) => {
+        setChats(doc.data());
+      });
+
+      return () => {
+        unsub();
+      };
+    };
+
+    currentUser.uid && getChats();
+  }, [currentUser.uid]);
+
+  const handleSelect = (u) => {
+    dispatch({ type: "CHANGE_USER", payload: u });
+  };
+
   return (
     <FriendsS>
       <Container>
@@ -25,15 +56,23 @@ function Friends() {
         <FriendsContent>
           <Menu />
           <ContainerFriends>
+            <InputSearchPerson placeholder="Введите пользователя" />
             <FriendsBlock>
-              <Images src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80" />
-              <NameContainer>
-                <Name>Ислам</Name>
-                <FirstName>Гасанов</FirstName>
-              </NameContainer>
-              <City>Г.Кизляр</City>
+              {Object.entries(chats)
+                ?.sort((a, b) => b[1].date - a[1].date)
+                .map((chat) => (
+                  <ContainerPerson
+                    key={chat[0]}
+                    onClick={() => handleSelect(chat[1].userInfo)}
+                  >
+                    <Images src={chat[1].userInfo.photoURL} />
+                    <NameContainer>
+                      <Name>{chat[1].userInfo.displayName}</Name>
+                      <City>Г.Кизляр</City>
+                    </NameContainer>
+                  </ContainerPerson>
+                ))}
             </FriendsBlock>
-            
           </ContainerFriends>
         </FriendsContent>
       </Container>
