@@ -29,9 +29,17 @@ export const DisplayFirstName = styled.p`
   font-family: "Montserrat", sans-serif;
   margin-right: 5px;
   font-size: 28px;
+
+  :hover {
+    border-bottom: 1px solid black;
+  }
 `;
 
-export const LinksText = styled.p``
+export const LinksText = styled.p`
+  :hover {
+    border-bottom: 1px solid black;
+  }
+`;
 
 export const Links = styled(NavLink)`
   @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap");
@@ -43,3 +51,16 @@ export const Links = styled(NavLink)`
   color: black;
   text-decoration: none;
 `;
+
+export const ButtonsExit = styled.button`
+  width: 36%;
+  border: none;
+  background-color: rgb(144, 168, 255);
+  border-radius: 6px;
+  color: white;
+  font-size: 16px;
+  height: 28px;
+  cursor: pointer;
+`;
+export const UserName = styled.p`
+`

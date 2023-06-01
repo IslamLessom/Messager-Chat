@@ -24,6 +24,7 @@ import { db } from "../firebase";
 //context
 import { ChatContext } from "../context/UserContext";
 import { AuthContext } from "../context/AuthContext";
+import Search from "../components/Search";
 
 function Friends() {
   const [chats, setChats] = useState([]);
@@ -56,7 +57,7 @@ function Friends() {
         <FriendsContent>
           <Menu />
           <ContainerFriends>
-            <InputSearchPerson placeholder="Введите пользователя" />
+            <Search />
             <FriendsBlock>
               {Object.entries(chats)
                 ?.sort((a, b) => b[1].date - a[1].date)

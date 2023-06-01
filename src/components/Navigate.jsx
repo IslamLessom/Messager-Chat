@@ -8,6 +8,8 @@ import {
   Links,
   LinksText,
   NavigateS,
+  ButtonsExit,
+  UserName,
 } from "./Navigate.elements";
 //firebase
 import { collection, getDocs } from "firebase/firestore";
@@ -54,9 +56,11 @@ function Navigate() {
         <Links to="/">
           <ImagesLink src={profile[myProfile].photoURL} />
           <DisplayFirstName>
-            <p>{profile[myProfile].displayFirstName}</p>
+            <UserName>
+              {profile[myProfile].displayFirstName}
+              {profile[myProfile].displayName}
+            </UserName>
           </DisplayFirstName>
-          <p>{profile[myProfile].displayName}</p>
         </Links>
         <Links to="/message">
           <svg
@@ -117,7 +121,12 @@ function Navigate() {
           </svg>
           <LinksText>Друзья</LinksText>
         </Links>
-        <button style={{marginTop: '10px'}} onClick={() => signOut(auth)}>logout</button>
+        <ButtonsExit
+          style={{ marginTop: "10px" }}
+          onClick={() => signOut(auth)}
+        >
+          Выход
+        </ButtonsExit>
       </ul>
     </NavigateS>
   );

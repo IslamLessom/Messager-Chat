@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
 export const SearchS = styled.div`
-  position: absolute;
-  bottom: 40.1%;
-  width: 60%;
+  margin-top: 70px;
+  width: 100%;
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
