@@ -82,7 +82,8 @@ export const InputSearchPerson = styled.input`
 `;
 
 export const ContainerPerson = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 120px 120px 120px;
   align-items: center;
   margin-top: 20px;
   justify-content: space-evenly;

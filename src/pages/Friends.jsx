@@ -67,10 +67,9 @@ function Friends() {
                     onClick={() => handleSelect(chat[1].userInfo)}
                   >
                     <Images src={chat[1].userInfo.photoURL} />
-                    <NameContainer>
-                      <Name>{chat[1].userInfo.displayName}</Name>
-                      <City>Г.Кизляр</City>
-                    </NameContainer>
+
+                    <Name>{chat[1].userInfo.displayName}</Name>
+                    <City>Г.Кизляр</City>
                   </ContainerPerson>
                 ))}
             </FriendsBlock>

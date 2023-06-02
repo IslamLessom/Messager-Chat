@@ -38,6 +38,7 @@ const Register = () => {
     const password = e.target[4].value;
     const file = e.target[5].files[0];
 
+    //зафиксить ошибку с регистрацией добавть значения в res
     try {
       const res = await createUserWithEmailAndPassword(auth, email, password);
 

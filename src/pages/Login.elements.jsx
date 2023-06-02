@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const FormContainer = styled.div`
-  background-color: #a7bcff;
+  background-color: #ebedf0;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -10,6 +10,7 @@ export const FormContainer = styled.div`
 
 export const FormWrapper = styled.div`
   background-color: white;
+  box-shadow: #00000033 5px 5px 5px;
   padding: 20px 60px;
   border-radius: 10px;
   display: flex;
