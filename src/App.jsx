@@ -1,7 +1,6 @@
 //react
 import React, { useContext } from "react";
 
-
 //router
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 //context
@@ -14,7 +13,6 @@ import News from "./pages/News";
 import Profile from "./pages/Profile";
 import Friends from "./pages/Friends";
 import { GlobalStyles } from "./GlobalStyles";
-
 
 function App() {
   const { currentUser } = useContext(AuthContext);
@@ -29,7 +27,7 @@ function App() {
 
   return (
     <BrowserRouter>
-    <GlobalStyles/>
+      <GlobalStyles />
       <Routes>
         <Route path="/">
           <Route

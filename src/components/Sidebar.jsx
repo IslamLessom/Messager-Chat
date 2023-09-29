@@ -12,8 +12,9 @@ function Sidebar() {
     <SidebarS>
       <Navbar />
       <ContainerMenu>
+        {/*<Navigate />*/}{/*зафиксить баг в компоненте*/} 
         <Navigate />
-        {window.location.pathname == "/message" ? (
+        {window.location.pathname === "/message" ? (
           <>
             <Search />
             <Chats />

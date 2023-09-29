@@ -24,7 +24,7 @@ export const ImagesLink = styled.img`
   margin-right: 3px;
 `;
 
-export const DisplayFirstName = styled.p`
+export const DisplayFirstName = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap");
   font-family: "Montserrat", sans-serif;
   margin-right: 5px;

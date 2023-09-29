@@ -19,7 +19,7 @@ import { signOut } from "firebase/auth";
 
 function Navigate() {
   const [profile, setProfile] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   //context
   const { currentUser } = useContext(AuthContext);
   //search my profile in object
@@ -33,10 +33,10 @@ function Navigate() {
       const data = await getDocs(profileCollectionRef);
       setProfile(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
-    getProfile().finally(() => setIsLoading(false));
+    getProfile().finally(() => setIsLoading(true));
   }, []);
 
-  if (isLoading) {
+  if (isLoading !== true) {
     return (
       <h1
         style={{
@@ -49,12 +49,10 @@ function Navigate() {
       </h1>
     );
   }
-
   return (
     <NavigateS>
       <ul>
         <Links to="/">
-          <ImagesLink src={profile[myProfile].photoURL} />
           <DisplayFirstName>
             <UserName>
               {profile[myProfile].displayFirstName}
@@ -125,7 +123,9 @@ function Navigate() {
           style={{ marginTop: "10px" }}
           onClick={() => signOut(auth)}
         >
-          Выход
+          <Links to="/login">
+            Выход
+          </Links>
         </ButtonsExit>
       </ul>
     </NavigateS>
