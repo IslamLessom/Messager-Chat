@@ -14,6 +14,7 @@ import { useUserStore } from "../../lib/userStore";
 import upload from "../../lib/upload";
 import { format } from "timeago.js";
 
+
 const Chat = () => {
   const [chat, setChat] = useState();
   const [open, setOpen] = useState(false);
@@ -31,7 +32,7 @@ const Chat = () => {
 
   useEffect(() => {
     endRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [chat.messages]);
+  });
 
   useEffect(() => {
     const unSub = onSnapshot(doc(db, "chats", chatId), (res) => {
