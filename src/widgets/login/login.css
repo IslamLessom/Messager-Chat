@@ -5,7 +5,7 @@
   align-items: center;
   gap: 100px;
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 900px) {
     gap: 0;
     flex-direction: column;
     h2 {
@@ -19,7 +19,7 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: 900px) {
       flex: 0;
     }
 
@@ -78,7 +78,7 @@
     height: 80%;
     width: 2px;
     background-color: #dddddd35;
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: 900px) {
       width: 0;
       height: 0;
     }
