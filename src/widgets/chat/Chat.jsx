@@ -23,6 +23,7 @@ const Chat = () => {
     file: null,
     url: "",
   });
+  const [details, setDetails] = useState(false)
 
   const { currentUser } = useUserStore();
   const { chatId, user, isCurrentUserBlocked, isReceiverBlocked } =
@@ -125,7 +126,7 @@ const Chat = () => {
         <div className="icons">
           <img src="./phone.png" alt="" />
           <img src="./video.png" alt="" />
-          <img src="./info.png" alt="" />
+          <button  className="info-button"><img src="./info.png" alt="" /></button>
         </div>
       </div>
       <div className="center">
