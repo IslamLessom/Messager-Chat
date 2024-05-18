@@ -1,5 +1,5 @@
 .detail {
-  flex: 1;
+  height: 90vh;
   overflow: scroll;
   scrollbar-width: none;
   
